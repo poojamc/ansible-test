@@ -1,0 +1,18 @@
+---
+- hosts: group2
+  tasks:
+    - name: create-file
+      file:
+        name: gdir1
+        path: /home/ubuntu
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+        mode: 0777
+    - name: install_maven
+      apt:
+        name: maven
+        state: latest
+        update_cache: yes     
+
+
