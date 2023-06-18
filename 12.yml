@@ -1,0 +1,11 @@
+---
+- hosts: group1
+  tasks:
+    - name: install_git
+      apt:
+        name: git
+        state: present
+    - name: copy_file
+      copy:
+        src: /home/ubuntu/monk
+        dest: /home/ubuntu
