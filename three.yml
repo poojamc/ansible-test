@@ -1,0 +1,11 @@
+---
+- hosts: group2
+  gather_facts: no
+  tasks:
+    - name: initialize directory path
+      set_fact:
+          dir_path: "/home/ubuntu/ansible-test"
+    - name: "creating {{ dir_path }} directory"
+      file:
+        path: "{{ dir_path }}"
+        state: directory
